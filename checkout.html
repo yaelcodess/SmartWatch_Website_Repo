@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout | PULSERA VITA</title>
+<link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+
+  <!-- ===== HEADER / NAVBAR ===== -->
+  <header class="co-header">
+    <div class="co-container co-navbar">
+      <a href="index.html" class="co-logo">PULSERA <span>VITA</span></a>
+      <a href="pricing.html" class="co-back-link">&larr; Back to Pricing</a>
+    </div>
+  </header>
+
+  <main class="co-container co-layout">
+
+    <!-- ===== LEFT: ADDRESS + PAYMENT ===== -->
+    <form id="checkoutForm" class="co-form">
+
+      <section class="co-card">
+        <h2>1. Delivery Address</h2>
+
+        <label>Full Name
+          <input type="text" name="fullName" placeholder="Juan Dela Cruz" required>
+        </label>
+
+        <label>Phone Number
+          <input type="tel" name="phone" placeholder="09XX XXX XXXX" required>
+        </label>
+
+        <label>Street Address
+          <input type="text" name="address" placeholder="House No., Street, Barangay" required>
+        </label>
+
+        <div class="co-row">
+          <label>City / Municipality
+            <input type="text" name="city" placeholder="Quezon City" required>
+          </label>
+          <label>Postal Code
+            <input type="text" name="postal" placeholder="1100" required>
+          </label>
+        </div>
+      </section>
+
+      <section class="co-card">
+        <h2>2. Payment Method</h2>
+
+        <label class="co-radio">
+          <input type="radio" name="payment" value="Cash on Delivery" checked>
+          <span>Cash on Delivery (COD)</span>
+        </label>
+        <label class="co-radio">
+          <input type="radio" name="payment" value="GCash">
+          <span>GCash</span>
+        </label>
+        <label class="co-radio">
+          <input type="radio" name="payment" value="Credit / Debit Card">
+          <span>Credit / Debit Card</span>
+        </label>
+        <label class="co-radio">
+          <input type="radio" name="payment" value="Bank Transfer">
+          <span>Bank Transfer</span>
+        </label>
+      </section>
+
+    </form>
+
+    <!-- ===== RIGHT: ORDER SUMMARY ===== -->
+    <aside class="co-card co-summary">
+      <h2>Order Summary</h2>
+
+      <div class="co-product">
+        <img id="planImage" src="images/pricing-watch.jpg" alt="PULSERA VITA smartwatch">
+        <div>
+          <p class="co-plan-name">PULSERA VITA <span id="planName">Pro</span> Plan</p>
+          <p class="co-plan-unit">₱<span id="unitPrice">2,199</span> / unit</p>
+        </div>
+      </div>
+
+      <div class="co-qty">
+        <span>Quantity</span>
+        <div class="co-qty-controls">
+          <button type="button" id="qtyMinus">&minus;</button>
+          <span id="qtyValue">1</span>
+          <button type="button" id="qtyPlus">+</button>
+        </div>
+      </div>
+
+      <div class="co-line">
+        <span>Subtotal</span>
+        <span>₱<span id="subtotal">2,199</span></span>
+      </div>
+      <div class="co-line">
+        <span>Shipping Fee</span>
+        <span>₱<span id="shipping">150</span></span>
+      </div>
+      <div class="co-line co-total">
+        <span>Total</span>
+        <span>₱<span id="total">2,349</span></span>
+      </div>
+
+      <button type="submit" form="checkoutForm" class="co-btn-primary">Place Order</button>
+      <p class="co-note">By placing your order you agree to pay the amount above upon the method selected.</p>
+    </aside>
+
+  </main>
+
+  <!-- ===== ORDER CONFIRMED (hidden until submit) ===== -->
+  <section class="co-confirm" id="confirmScreen">
+    <div class="co-confirm-card">
+      <div class="co-check">&#10003;</div>
+      <h2>Order Placed!</h2>
+      <p id="confirmSummary"></p>
+      <a href="index.html" class="co-btn-primary">Back to Home</a>
+    </div>
+  </section>
+
+  <script src="checkout.js"></script>
+</body>
+</html>
